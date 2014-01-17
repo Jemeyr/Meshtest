@@ -9,9 +9,22 @@ public class Fly : MonoBehaviour {
 	void Start () {
 	
 	}
-	
+
+
+
 	// Update is called once per frame
 	void Update () {
+	
+		if (Input.GetMouseButtonUp(0)){
+			Screen.lockCursor = true;
+			Screen.showCursor = false;
+		}
+
+		if (Input.GetKey(KeyCode.Escape)){
+			Screen.showCursor = true;
+		}
+
+
 		if (Input.GetAxis("Vertical") != 0)
 		{
 			transform.Translate(Vector3.forward * flySpeed * Input.GetAxis("Vertical"));
